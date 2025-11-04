@@ -1,9 +1,10 @@
 require conf/machine/include/imx-base.inc
 require conf/machine/include/arm/armv8-2a/tune-cortexa55.inc
 
+MACHINEOVERRIDES =. "tsimx95:mx95:tsimx:"
+
 MACHINE_FEATURES += "pci wifi bluetooth optee"
 MACHINE_FEATURES:append:use-nxp-bsp = " nxpwifi-all-pcie nxpwifi-all-sdio jailhouse dpdk xen"
-
 KERNEL_DEVICETREE = " \
     freescale/${KERNEL_DEVICETREE_BASENAME}.dtb \
 "
@@ -11,8 +12,6 @@ UBOOT_DTB_NAME = "${KERNEL_DEVICETREE_BASENAME}.dtb"
 
 IMX_DEFAULT_BOOTLOADER:use-nxp-bsp = "u-boot-imx"
 IMX_DEFAULT_BOOTLOADER:use-mainline-bsp = "u-boot-fslc"
-
-MACHINEOVERRIDES:append = ":tsimx95"
 
 LOADADDR = ""
 UBOOT_SUFFIX = "bin"
@@ -30,15 +29,6 @@ DDR_TYPE   ?= "lpddr5"
 DDR_TYPE   = "lpddr5"
 
 IMXBOOT_VARIANTS = "alt jailhouse netc rpmsg sof"
-
-# Multiple system manager configs by IMXBOOT_VARIANT
-#SYSTEM_MANAGER_CONFIG = \
-#    "${@bb.utils.contains('IMXBOOT_VARIANT', 'alt',       'mx95alt', \
-#        bb.utils.contains('IMXBOOT_VARIANT', 'jailhouse', 'mx95evkjailhouse', \
-#        bb.utils.contains('IMXBOOT_VARIANT', 'netc',      'mx95netc', \
-#        bb.utils.contains('IMXBOOT_VARIANT', 'rpmsg',     'mx95evkrpmsg', \
-#        bb.utils.contains('IMXBOOT_VARIANT', 'sof',       'mx95evksof', \
-#                                                          'mx95evk', d), d), d), d), d)}"
 
 SYSTEM_MANAGER_CONFIG ?= "tsimx95"
 
