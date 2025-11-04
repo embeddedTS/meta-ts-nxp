@@ -1,4 +1,6 @@
-SRCREV:tsimx95 = "96b6e2024da969df18aae54b56295d1a47930ee9"
-SRCBRANCH:tsimx95 = "lf-6.12.y"
-SRC_URI:tsimx95 = "git://github.com/embeddedTS/linux-tsimx;protocol=https;branch=${SRCBRANCH}"
+SRCREV:tsimx = "a5fd0248cd3ed0e462a53723aa304b53aad9e703"
+SRCBRANCH:tsimx = "lf-6.12.y"
+SRC_URI:tsimx = "git://github.com/embeddedTS/linux-tsimx;protocol=https;branch=${SRCBRANCH}"
 
+IMX_KERNEL_CONFIG_AARCH64:tsimx93 = "tsimx93_defconfig"
+IMX_KERNEL_CONFIG_AARCH64:tsimx95 = "tsimx95_defconfig"
