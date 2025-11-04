@@ -9,6 +9,9 @@ The following development boards were tested in this release.
 | Board       | Machine Configuration Files                                          |
 |-------------|----------------------------------------------------------------------|
 | TS-11000    | ts11000                                                              |
+| TS-9370     | ts9370                                                               |
+| TS-9390     | ts9390                                                               |
+| TS-4300     | ts4300                                                               |
 
 ## Getting Started
 
