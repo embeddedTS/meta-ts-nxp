@@ -1,4 +1,4 @@
-SRCREV:tsimx = "a5fd0248cd3ed0e462a53723aa304b53aad9e703"
+SRCREV:tsimx = "90115ef8d6e2735bfb57ee7f8c2647ec697f999e"
 SRCBRANCH:tsimx = "lf-6.12.y"
 SRC_URI:tsimx = "git://github.com/embeddedTS/linux-tsimx;protocol=https;branch=${SRCBRANCH}"
 
