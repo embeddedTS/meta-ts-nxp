@@ -13,6 +13,7 @@ KERNEL_DEVICETREE = " \
 UBOOT_DTB_NAME = "${KERNEL_DEVICETREE_BASENAME}.dtb"
 
 IMX_DEFAULT_BOOTLOADER:use-nxp-bsp = "u-boot-imx"
+PREFERRED_RPROVIDER_u-boot-default-script = "u-boot-script-ts"
 
 LOADADDR = ""
 UBOOT_SUFFIX = "bin"
@@ -49,11 +50,12 @@ DDR_FIRMWARE_NAME = " \
     lpddr4_imem_2d_v202201.bin \
 "
 
-WKS_FILE_DEPENDS:append:imx-nxp-bsp = " imx-m33-demos"
+WKS_FILE_DEPENDS:append:imx-nxp-bsp = " imx-m33-demos u-boot-default-script"
 IMAGE_BOOT_FILES:append:imx-nxp-bsp = " \
     mcore-demos/imx93-11x11-evk_m33_TCM_low_power_wakeword.bin \
     mcore-demos/imx93-11x11-evk_m33_TCM_power_mode_switch.bin \
     mcore-demos/imx93-11x11-evk_m33_TCM_rpmsg_lite_pingpong_rtos_linux_remote.bin \
     mcore-demos/imx93-11x11-evk_m33_TCM_rpmsg_lite_str_echo_rtos.bin \
     mcore-demos/imx93-11x11-evk_m33_TCM_sai_low_power_audio.bin \
+    boot.scr-${MACHINE};boot.scr \
 "
